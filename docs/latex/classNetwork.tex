@@ -1,0 +1,330 @@
+\hypertarget{classNetwork}{\section{Network Class Reference}
+\label{classNetwork}\index{Network@{Network}}
+}
+
+
+A network of neuron is what is being simulated.  
+
+
+
+
+{\ttfamily \#include $<$network.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNetwork_a3cc2fb4f8fa4d507077e8da85ce5a1c8}{Network} ()
+\begin{DoxyCompactList}\small\item\em A constructor. \end{DoxyCompactList}\item 
+\hypertarget{classNetwork_a7a4e19cdb4bf0c7ecf82baa643831492}{\hyperlink{classNetwork_a7a4e19cdb4bf0c7ecf82baa643831492}{$\sim$\-Network} ()}\label{classNetwork_a7a4e19cdb4bf0c7ecf82baa643831492}
+
+\begin{DoxyCompactList}\small\item\em A destructor which deletes all neurons of the network. \end{DoxyCompactList}\item 
+\hypertarget{classNetwork_ab07bb6f6d9020b9eb230551083ea929f}{void \hyperlink{classNetwork_ab07bb6f6d9020b9eb230551083ea929f}{update} ()}\label{classNetwork_ab07bb6f6d9020b9eb230551083ea929f}
+
+\begin{DoxyCompactList}\small\item\em A method updating all of the network's neuron by one step which is used in the main loop. \end{DoxyCompactList}\item 
+void \hyperlink{classNetwork_a222e084554183af355833cda07a83877}{print\-Simulation\-Data} (const std\-::string \&name\-Of\-File) const 
+\begin{DoxyCompactList}\small\item\em Prints each neuron's spike times and neuron id in a file of given name using the private function print simulation data. \end{DoxyCompactList}\item 
+void \hyperlink{classNetwork_a8909c07d0e6e292f5ca54e56a797ebe0}{print\-Simulation\-Data\-Within\-Time\-Interval} (const std\-::string \&name\-Of\-File) const 
+\begin{DoxyCompactList}\small\item\em Prints each neuron's spike times that lie in an interval defined by the simulation and neuron id in a file of given name using the private function print simulation data. \end{DoxyCompactList}\item 
+double \hyperlink{classNetwork_ac82435bb56bf5eabfdd3e3f4afadea2b}{get\-Mean\-Spike\-Rate\-In\-Interval} (unsigned int begin\-Interval, unsigned int end\-Interval) const 
+\begin{DoxyCompactList}\small\item\em Calculates the mean spike rate of the network's neurons in an interval to indicate. \end{DoxyCompactList}\item 
+double \hyperlink{classNetwork_a2e2531cb63d1b17bd4ce29a675b12d74}{get\-Mean\-Number\-Of\-Targets\-Per\-Neuron} () const 
+\begin{DoxyCompactList}\small\item\em Goes through the network's neurons and calculates the mean number of targets per neuron. \end{DoxyCompactList}\item 
+double \hyperlink{classNetwork_a2f3ab248d3453b67f1545bf2e310538f}{get\-Mean\-Number\-Of\-Excitatory\-Targets\-Per\-Neuron} () const 
+\begin{DoxyCompactList}\small\item\em Goes through the network's neurons and calculates the mean number of excitatory targets per neuron. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classNetwork_aabc3688063e1c802d7e23ed2a3268ce2}{create\-Neurons} ()
+\begin{DoxyCompactList}\small\item\em Auxiliary function that creates a number of neurons defined the parameter file. \end{DoxyCompactList}\item 
+void \hyperlink{classNetwork_a0f7791473e2dab1ed23d0af25e3c866d}{establish\-Connections} ()
+\begin{DoxyCompactList}\small\item\em Auxiliary function that creates the connections between neurons. \end{DoxyCompactList}\item 
+void \hyperlink{classNetwork_ad28d5206f20213eba2143222c566fb00}{print\-Simulation\-Data} (const std\-::string \&name\-Of\-File, std\-::vector$<$ unsigned int $>$\-::const\-\_\-iterator(Network\-::$\ast$get\-Iterator\-Begin)(unsigned int) const , std\-::vector$<$ unsigned int $>$\-::const\-\_\-iterator(Network\-::$\ast$get\-Iterator\-End)(unsigned int) const ) const 
+\begin{DoxyCompactList}\small\item\em An auxiliary function for printing the network's spike times to a file that allows to avoid the duplication of code. \end{DoxyCompactList}\item 
+std\-::vector$<$ unsigned int $>$\\*
+\-::const\-\_\-iterator \hyperlink{classNetwork_a92fcc003c80ba7657389c500d7b9a0c1}{get\-Iterator\-To\-Begin} (unsigned int neuron\-Id) const 
+\begin{DoxyCompactList}\small\item\em An auxiliary function for printing the network's spike times to a file that returns an iterator pointing on neuron of given id's first spike time. \end{DoxyCompactList}\item 
+std\-::vector$<$ unsigned int $>$\\*
+\-::const\-\_\-iterator \hyperlink{classNetwork_a9d5998fdbac5347ebd70936dfaf7b47c}{get\-Iterator\-To\-End} (unsigned int neuron\-Id) const 
+\begin{DoxyCompactList}\small\item\em An auxiliary function for printing the network's spike times to a file that returns an iterator pointing on neuron of given id's last spike time. \end{DoxyCompactList}\item 
+std\-::vector$<$ unsigned int $>$\\*
+\-::const\-\_\-iterator \hyperlink{classNetwork_a704f86bb8fc175c204aa63575116b33a}{get\-Iterator\-To\-Begin\-Interval} (unsigned int neuron\-Id) const 
+\begin{DoxyCompactList}\small\item\em An auxiliary function for printing the network's spike times to a file that returns an iterator pointing on neuron of given id's first spike time that lies within an interval defined in the parameter file. \end{DoxyCompactList}\item 
+std\-::vector$<$ unsigned int $>$\\*
+\-::const\-\_\-iterator \hyperlink{classNetwork_aa8c6b4953e1c5655d891859ffd936848}{get\-Iterator\-To\-End\-Interval} (unsigned int neuron\-Id) const 
+\begin{DoxyCompactList}\small\item\em An auxiliary function for printing the network's spike times to a file that returns an iterator pointing on neuron of given id's last spike time that lies within an interval defined in the parameter file. \end{DoxyCompactList}\item 
+double \hyperlink{classNetwork_a1d598a5f615aa488f3e52666739da1ca}{get\-Mean\-Number\-Of\-Targets\-Per\-Neuron} (size\-\_\-t(Neuron\-::$\ast$get\-Number\-Targets)() const ) const 
+\begin{DoxyCompactList}\small\item\em Auxiliary function . \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classNetwork_a11dac461892218c2653fccdb761a99aa}{std\-::array$<$ \hyperlink{classNeuron}{Neuron} \\*
+$\ast$, T\-O\-T\-A\-L\-\_\-\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-N\-E\-U\-R\-O\-N\-S\-\_\-\-N $>$ \hyperlink{classNetwork_a11dac461892218c2653fccdb761a99aa}{neurons}}\label{classNetwork_a11dac461892218c2653fccdb761a99aa}
+
+\begin{DoxyCompactList}\small\item\em A container carrying the neurons forming the network, an array of pointers to neurons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A network of neuron is what is being simulated. 
+
+An ensemble of neurons, that evolves over time and reacts to stimuli that arrive from the rest of the brain. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNetwork_a3cc2fb4f8fa4d507077e8da85ce5a1c8}{\index{Network@{Network}!Network@{Network}}
+\index{Network@{Network}!Network@{Network}}
+\subsubsection[{Network}]{\setlength{\rightskip}{0pt plus 5cm}Network\-::\-Network (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a3cc2fb4f8fa4d507077e8da85ce5a1c8}
+
+
+A constructor. 
+
+Initializes a neuronal network by creating and connecting a number of neurons specified in the parameter file by means of the functions \hyperlink{classNetwork_aabc3688063e1c802d7e23ed2a3268ce2}{create\-Neurons()} and \hyperlink{classNetwork_a0f7791473e2dab1ed23d0af25e3c866d}{establish\-Connections()}. There is a defined ratio of inhibitory and exitatory neurons and each one of them receives a fixed number of connections from both inhibitory and excitatory presynaptic neuron that are chosen randomly. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classNetwork_aabc3688063e1c802d7e23ed2a3268ce2}{\index{Network@{Network}!create\-Neurons@{create\-Neurons}}
+\index{create\-Neurons@{create\-Neurons}!Network@{Network}}
+\subsubsection[{create\-Neurons}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::create\-Neurons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_aabc3688063e1c802d7e23ed2a3268ce2}
+
+
+Auxiliary function that creates a number of neurons defined the parameter file. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron}{Neuron()} 
+\end{DoxySeeAlso}
+\hypertarget{classNetwork_a0f7791473e2dab1ed23d0af25e3c866d}{\index{Network@{Network}!establish\-Connections@{establish\-Connections}}
+\index{establish\-Connections@{establish\-Connections}!Network@{Network}}
+\subsubsection[{establish\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::establish\-Connections (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a0f7791473e2dab1ed23d0af25e3c866d}
+
+
+Auxiliary function that creates the connections between neurons. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron}{Neuron()} 
+\end{DoxySeeAlso}
+\hypertarget{classNetwork_a92fcc003c80ba7657389c500d7b9a0c1}{\index{Network@{Network}!get\-Iterator\-To\-Begin@{get\-Iterator\-To\-Begin}}
+\index{get\-Iterator\-To\-Begin@{get\-Iterator\-To\-Begin}!Network@{Network}}
+\subsubsection[{get\-Iterator\-To\-Begin}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ unsigned int $>$\-::const\-\_\-iterator Network\-::get\-Iterator\-To\-Begin (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{neuron\-Id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a92fcc003c80ba7657389c500d7b9a0c1}
+
+
+An auxiliary function for printing the network's spike times to a file that returns an iterator pointing on neuron of given id's first spike time. 
+
+\begin{DoxySeeAlso}{See Also}
+print\-Simulation\-Data(const std\-::string\& name\-Of\-File) 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em neuron\-Id} & an unsigned int \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a704f86bb8fc175c204aa63575116b33a}{\index{Network@{Network}!get\-Iterator\-To\-Begin\-Interval@{get\-Iterator\-To\-Begin\-Interval}}
+\index{get\-Iterator\-To\-Begin\-Interval@{get\-Iterator\-To\-Begin\-Interval}!Network@{Network}}
+\subsubsection[{get\-Iterator\-To\-Begin\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ unsigned int $>$\-::const\-\_\-iterator Network\-::get\-Iterator\-To\-Begin\-Interval (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{neuron\-Id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a704f86bb8fc175c204aa63575116b33a}
+
+
+An auxiliary function for printing the network's spike times to a file that returns an iterator pointing on neuron of given id's first spike time that lies within an interval defined in the parameter file. 
+
+\begin{DoxySeeAlso}{See Also}
+print\-Simulation\-Data\-Within\-Time\-Interval(const std\-::string\& name\-Of\-File) 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em neuron\-Id} & an unsigned int \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a9d5998fdbac5347ebd70936dfaf7b47c}{\index{Network@{Network}!get\-Iterator\-To\-End@{get\-Iterator\-To\-End}}
+\index{get\-Iterator\-To\-End@{get\-Iterator\-To\-End}!Network@{Network}}
+\subsubsection[{get\-Iterator\-To\-End}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ unsigned int $>$\-::const\-\_\-iterator Network\-::get\-Iterator\-To\-End (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{neuron\-Id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a9d5998fdbac5347ebd70936dfaf7b47c}
+
+
+An auxiliary function for printing the network's spike times to a file that returns an iterator pointing on neuron of given id's last spike time. 
+
+\begin{DoxySeeAlso}{See Also}
+print\-Simulation\-Data(const std\-::string\& name\-Of\-File) 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em neuron\-Id} & an unsigned int \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_aa8c6b4953e1c5655d891859ffd936848}{\index{Network@{Network}!get\-Iterator\-To\-End\-Interval@{get\-Iterator\-To\-End\-Interval}}
+\index{get\-Iterator\-To\-End\-Interval@{get\-Iterator\-To\-End\-Interval}!Network@{Network}}
+\subsubsection[{get\-Iterator\-To\-End\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ unsigned int $>$\-::const\-\_\-iterator Network\-::get\-Iterator\-To\-End\-Interval (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{neuron\-Id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_aa8c6b4953e1c5655d891859ffd936848}
+
+
+An auxiliary function for printing the network's spike times to a file that returns an iterator pointing on neuron of given id's last spike time that lies within an interval defined in the parameter file. 
+
+\begin{DoxySeeAlso}{See Also}
+print\-Simulation\-Data\-Within\-Time\-Interval(const std\-::string\& name\-Of\-File) 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em neuron\-Id} & an unsigned int \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a2f3ab248d3453b67f1545bf2e310538f}{\index{Network@{Network}!get\-Mean\-Number\-Of\-Excitatory\-Targets\-Per\-Neuron@{get\-Mean\-Number\-Of\-Excitatory\-Targets\-Per\-Neuron}}
+\index{get\-Mean\-Number\-Of\-Excitatory\-Targets\-Per\-Neuron@{get\-Mean\-Number\-Of\-Excitatory\-Targets\-Per\-Neuron}!Network@{Network}}
+\subsubsection[{get\-Mean\-Number\-Of\-Excitatory\-Targets\-Per\-Neuron}]{\setlength{\rightskip}{0pt plus 5cm}double Network\-::get\-Mean\-Number\-Of\-Excitatory\-Targets\-Per\-Neuron (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_a2f3ab248d3453b67f1545bf2e310538f}
+
+
+Goes through the network's neurons and calculates the mean number of excitatory targets per neuron. 
+
+\begin{DoxySeeAlso}{See Also}
+neuron\-\_\-unit\-Test.\-cpp 
+\end{DoxySeeAlso}
+\hypertarget{classNetwork_a2e2531cb63d1b17bd4ce29a675b12d74}{\index{Network@{Network}!get\-Mean\-Number\-Of\-Targets\-Per\-Neuron@{get\-Mean\-Number\-Of\-Targets\-Per\-Neuron}}
+\index{get\-Mean\-Number\-Of\-Targets\-Per\-Neuron@{get\-Mean\-Number\-Of\-Targets\-Per\-Neuron}!Network@{Network}}
+\subsubsection[{get\-Mean\-Number\-Of\-Targets\-Per\-Neuron}]{\setlength{\rightskip}{0pt plus 5cm}double Network\-::get\-Mean\-Number\-Of\-Targets\-Per\-Neuron (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_a2e2531cb63d1b17bd4ce29a675b12d74}
+
+
+Goes through the network's neurons and calculates the mean number of targets per neuron. 
+
+\begin{DoxySeeAlso}{See Also}
+neuron\-\_\-unit\-Test.\-cpp 
+\end{DoxySeeAlso}
+\hypertarget{classNetwork_a1d598a5f615aa488f3e52666739da1ca}{\index{Network@{Network}!get\-Mean\-Number\-Of\-Targets\-Per\-Neuron@{get\-Mean\-Number\-Of\-Targets\-Per\-Neuron}}
+\index{get\-Mean\-Number\-Of\-Targets\-Per\-Neuron@{get\-Mean\-Number\-Of\-Targets\-Per\-Neuron}!Network@{Network}}
+\subsubsection[{get\-Mean\-Number\-Of\-Targets\-Per\-Neuron}]{\setlength{\rightskip}{0pt plus 5cm}double Network\-::get\-Mean\-Number\-Of\-Targets\-Per\-Neuron (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t(Neuron\-::$\ast$)() const}]{get\-Number\-Targets}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a1d598a5f615aa488f3e52666739da1ca}
+
+
+Auxiliary function . 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNetwork_a2e2531cb63d1b17bd4ce29a675b12d74}{get\-Mean\-Number\-Of\-Targets\-Per\-Neuron()} 
+
+\hyperlink{classNetwork_a2f3ab248d3453b67f1545bf2e310538f}{get\-Mean\-Number\-Of\-Excitatory\-Targets\-Per\-Neuron()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em get\-Number\-Targets} & a member function of neuron that yields an unsigned int \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_ac82435bb56bf5eabfdd3e3f4afadea2b}{\index{Network@{Network}!get\-Mean\-Spike\-Rate\-In\-Interval@{get\-Mean\-Spike\-Rate\-In\-Interval}}
+\index{get\-Mean\-Spike\-Rate\-In\-Interval@{get\-Mean\-Spike\-Rate\-In\-Interval}!Network@{Network}}
+\subsubsection[{get\-Mean\-Spike\-Rate\-In\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}double Network\-::get\-Mean\-Spike\-Rate\-In\-Interval (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{begin\-Interval, }
+\item[{unsigned int}]{end\-Interval}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_ac82435bb56bf5eabfdd3e3f4afadea2b}
+
+
+Calculates the mean spike rate of the network's neurons in an interval to indicate. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classSimulation_acf963fa9fa6621ec7f98f743ffbd96f5}{Simulation\-::get\-Mean\-Spike\-Rate\-In\-Interval} 
+
+\hyperlink{classSimulation_a48419e2332a7186041433ca3b67fbdab}{Simulation\-::print\-Data\-For\-Brunel\-Figure\-To\-File\-With\-Mean\-Spiking\-Rate} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em begin\-Interval} & to investigate in steps an unsigned int \\
+\hline
+{\em end\-Interval} & to investigate in steps an unsigned int \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a222e084554183af355833cda07a83877}{\index{Network@{Network}!print\-Simulation\-Data@{print\-Simulation\-Data}}
+\index{print\-Simulation\-Data@{print\-Simulation\-Data}!Network@{Network}}
+\subsubsection[{print\-Simulation\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::print\-Simulation\-Data (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name\-Of\-File}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_a222e084554183af355833cda07a83877}
+
+
+Prints each neuron's spike times and neuron id in a file of given name using the private function print simulation data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-Of\-File} & a string \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_ad28d5206f20213eba2143222c566fb00}{\index{Network@{Network}!print\-Simulation\-Data@{print\-Simulation\-Data}}
+\index{print\-Simulation\-Data@{print\-Simulation\-Data}!Network@{Network}}
+\subsubsection[{print\-Simulation\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::print\-Simulation\-Data (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name\-Of\-File, }
+\item[{std\-::vector$<$ unsigned int $>$\-::const\-\_\-iterator(Network\-::$\ast$)(unsigned int) const}]{get\-Iterator\-Begin, }
+\item[{std\-::vector$<$ unsigned int $>$\-::const\-\_\-iterator(Network\-::$\ast$)(unsigned int) const}]{get\-Iterator\-End}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_ad28d5206f20213eba2143222c566fb00}
+
+
+An auxiliary function for printing the network's spike times to a file that allows to avoid the duplication of code. 
+
+\begin{DoxySeeAlso}{See Also}
+print\-Simulation\-Data(const std\-::string\& name\-Of\-File) 
+
+\hyperlink{classNetwork_a8909c07d0e6e292f5ca54e56a797ebe0}{print\-Simulation\-Data\-Within\-Time\-Interval} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em name\-Of\-File} & a string \\
+\hline
+{\em get\-Iterator\-Begin} & a member function that yields an iterator on a vector$<$unsigned int$>$ pointing the first element that is printed \\
+\hline
+{\em get\-Iterator\-End} & a member function that yields an iterator on a vector$<$unsigned int$>$ pointing the last element that is printed \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a8909c07d0e6e292f5ca54e56a797ebe0}{\index{Network@{Network}!print\-Simulation\-Data\-Within\-Time\-Interval@{print\-Simulation\-Data\-Within\-Time\-Interval}}
+\index{print\-Simulation\-Data\-Within\-Time\-Interval@{print\-Simulation\-Data\-Within\-Time\-Interval}!Network@{Network}}
+\subsubsection[{print\-Simulation\-Data\-Within\-Time\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::print\-Simulation\-Data\-Within\-Time\-Interval (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name\-Of\-File}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_a8909c07d0e6e292f5ca54e56a797ebe0}
+
+
+Prints each neuron's spike times that lie in an interval defined by the simulation and neuron id in a file of given name using the private function print simulation data. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classSimulation_ace8912fc809b3503c9a7e769d97cd7cb}{Simulation\-::print\-Data\-For\-Brunel\-Figure\-To\-File()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em name\-Of\-File} & a string \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+network.\-hpp\item 
+network.\-cpp\end{DoxyCompactItemize}

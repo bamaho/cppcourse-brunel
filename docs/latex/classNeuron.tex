@@ -1,0 +1,497 @@
+\hypertarget{classNeuron}{\section{Neuron Class Reference}
+\label{classNeuron}\index{Neuron@{Neuron}}
+}
+
+
+The unit cell of a network.  
+
+
+
+
+{\ttfamily \#include $<$neuron.\-hpp$>$}
+
+Inheritance diagram for Neuron\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNeuron}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classNeuron_a823487d01615fadb8ac19a2768dd9d96}{\hyperlink{classNeuron_a823487d01615fadb8ac19a2768dd9d96}{Neuron} ()}\label{classNeuron_a823487d01615fadb8ac19a2768dd9d96}
+
+\begin{DoxyCompactList}\small\item\em A constructor. \end{DoxyCompactList}\item 
+\hypertarget{classNeuron_a94a250ce7e167760e593979b899745b1}{virtual \hyperlink{classNeuron_a94a250ce7e167760e593979b899745b1}{$\sim$\-Neuron} ()}\label{classNeuron_a94a250ce7e167760e593979b899745b1}
+
+\begin{DoxyCompactList}\small\item\em A destructor. \end{DoxyCompactList}\item 
+double \hyperlink{classNeuron_a86341dee7a81765fe4840777a008c688}{get\-Membrane\-Potential} () const 
+\begin{DoxyCompactList}\small\item\em A getter for the neuron's membrane potential. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classNeuron_a9497c01c1513b480cb96488e104c8b00}{get\-Number\-Of\-Spikes} () const 
+\begin{DoxyCompactList}\small\item\em A getter for the number of times the neuron spiked in the course of time. \end{DoxyCompactList}\item 
+const std\-::vector$<$ unsigned int $>$ \& \hyperlink{classNeuron_ae87bb09d99e4e9c2185be8b73fc242ba}{get\-Spike\-Time} () const 
+\begin{DoxyCompactList}\small\item\em A getter for the neuron's spike times. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classNeuron_a785f2fa8ab4f76dbc6a4b2a18c15da35}{get\-Number\-Of\-Targets} () const 
+\begin{DoxyCompactList}\small\item\em A getter of the number of targets the neuron has. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classNeuron_a3c6a80c21ff5172e4de00c7dbf706303}{get\-Number\-Of\-Excitatory\-Targets} () const 
+\begin{DoxyCompactList}\small\item\em A getter of the number of excitatory neurons among the targets the neuron has. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_ae77210c7b0bf3739b01ec2e3dba96827}{set\-Input\-Current} (double external\-Current)
+\begin{DoxyCompactList}\small\item\em A setter for the external input current. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_a782b3b728eee5097ab205a7a7990225b}{update} ()
+\begin{DoxyCompactList}\small\item\em Is invoked at each cycle of the simulation and makes the neutron evolve in the course of time. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_ababbaa5bc5f7b2e00e0ae5ffcc8fbfdb}{update\-Without\-Background\-Noise} ()
+\begin{DoxyCompactList}\small\item\em The method is similar to void \hyperlink{classNeuron_a782b3b728eee5097ab205a7a7990225b}{update()} but it doesn't account for the random contribution from the rest of the brain. Is invoked at each cycle of the simulation and makes the neutron evolve in the course of time. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_aa8111a347de6ddfb6c799bdcd3092cb7}{receive\-Spike} (unsigned int local\-Time\-Of\-Spiking\-Neuron, double spike\-Amplitude)
+\begin{DoxyCompactList}\small\item\em This method of a connected neuron is called when the neuron spikes. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_a9bf071c800e76fa7fbd611cee7cd76d6}{add\-Target} (\hyperlink{classNeuron}{Neuron} $\ast$target)
+\begin{DoxyCompactList}\small\item\em Establishes a connection to a postsynaptic neuron, by adding it to its target. \end{DoxyCompactList}\item 
+double \hyperlink{classNeuron_a5487631e8982ae2368da0917535a9001}{get\-Background\-Noise} () const 
+\begin{DoxyCompactList}\small\item\em Creates a value which accounts for the contribution of the rest of the brain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classNeuron_ac1a73d639befdae8610674bb66c15831}{set\-Ratio\-Vext\-Over\-Vthr} (double ratio\-Vext\-Over\-Vthr\-\_\-)
+\begin{DoxyCompactList}\small\item\em Setter of the static attribute ratio\-Vext\-Over\-Vthr. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classNeuron_a521a967d65a078140cc9c6b8d30240ce}{update} (void(Neuron\-::$\ast$membrane\-Potential\-Update)())
+\begin{DoxyCompactList}\small\item\em An auxiliary function that allows to avoid duplication of code in \hyperlink{classNeuron_a782b3b728eee5097ab205a7a7990225b}{update()} and \hyperlink{classNeuron_ababbaa5bc5f7b2e00e0ae5ffcc8fbfdb}{update\-Without\-Background\-Noise()}. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_a41a81d8527734e59bae39f73fece887f}{update\-Membrane\-Potential} ()
+\begin{DoxyCompactList}\small\item\em Calculates and sets the new membrane potential as a function of the current membrane potential, the spikes that arrived with a signal delay and the random background noise arriving from the rest of the brain. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_a2a3d0130b76a6e1daa0191b97718178b}{update\-Membrane\-Potential\-Without\-Background\-Noise} ()
+\begin{DoxyCompactList}\small\item\em Calculates and sets the new membrane potential as a function of the current membrane potential, the external input current and the spikes that arrived with a signal delay. \end{DoxyCompactList}\item 
+bool \hyperlink{classNeuron_aa40fbb2b025efb1db420da32e16741c1}{is\-Refractory} () const 
+\begin{DoxyCompactList}\small\item\em Compares the neuron's internal time to the time of the last spike and the refraction time in order to test if the neuron is in a refractory period. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_a955ecfd2984f75c18664bd370c34af1d}{spike} ()
+\begin{DoxyCompactList}\small\item\em Stores the spiking time and sets the membrane potential to zero and sends an electrical impulse to the connected neurons. \end{DoxyCompactList}\item 
+double \hyperlink{classNeuron_a763493ef8eff51a638cbb75f0983b828}{read\-Ring\-Buffer} () const 
+\begin{DoxyCompactList}\small\item\em Reads the ring buffer's current entry to receive the spikes arriving with a delay that where emmited by presynaptic neurons. \end{DoxyCompactList}\item 
+void \hyperlink{classNeuron_a41dd9577d84a48bd427201b4b8234150}{reinitialize\-Current\-Ring\-Buffer\-Element} ()
+\begin{DoxyCompactList}\small\item\em Sets the current ring buffer element to zero and makes it thus ready to record new arriving spikes in another cycle to come. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classNeuron_af1c7b80b5e70e906734ce710d37b1fd7}{time\-To\-Ring\-Buffer\-Index} (unsigned int time) const 
+\begin{DoxyCompactList}\small\item\em Auxilliary method that yields the associated ring buffer index to a a given time by means of the modulo operator and checks if it is licit. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classNeuron_aec2283fbfaba764cd088e6d16b0a74bb}{get\-Spike\-Amplitude} () const 
+\begin{DoxyCompactList}\small\item\em A virtual method which returns the constant spike amplitude, that differs between inhibitory and excitatory neurons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classNeuron_a311f3321f19462c0aef8cbd68c60df67}{double \hyperlink{classNeuron_a311f3321f19462c0aef8cbd68c60df67}{membrane\-Potential}}\label{classNeuron_a311f3321f19462c0aef8cbd68c60df67}
+
+\begin{DoxyCompactList}\small\item\em The neuron's most important variable, a double. \end{DoxyCompactList}\item 
+\hypertarget{classNeuron_a50505e8dcb655170bfc9562465fd907f}{double \hyperlink{classNeuron_a50505e8dcb655170bfc9562465fd907f}{input\-Current}}\label{classNeuron_a50505e8dcb655170bfc9562465fd907f}
+
+\begin{DoxyCompactList}\small\item\em The external current that is applied to the neuron, a double, is zero if not altered in the main using its the setter. \end{DoxyCompactList}\item 
+\hypertarget{classNeuron_ab358994e1a6e4d3a1399906471657b4b}{std\-::vector$<$ unsigned int $>$ \hyperlink{classNeuron_ab358994e1a6e4d3a1399906471657b4b}{spikes}}\label{classNeuron_ab358994e1a6e4d3a1399906471657b4b}
+
+\begin{DoxyCompactList}\small\item\em A container that stores the spiking times in the course of time, a vector !!!!!!is not the appropriate choice...a list would provide the required functions as well. \end{DoxyCompactList}\item 
+\hypertarget{classNeuron_a5c97843cd38dd8c5ff2d861d25e18473}{std\-::vector$<$ \hyperlink{classNeuron}{Neuron} $\ast$ $>$ \hyperlink{classNeuron_a5c97843cd38dd8c5ff2d861d25e18473}{targets}}\label{classNeuron_a5c97843cd38dd8c5ff2d861d25e18473}
+
+\begin{DoxyCompactList}\small\item\em A container containing the postsynaptic neurons, the neurons on which an eventual spike of the current neuron has an impact. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classNeuron_adb1a016b5d339ba3ba95367bb66f391a}{internal\-Time}
+\begin{DoxyCompactList}\small\item\em Another clock which allows to synchronize the times between the neurons, otherwise a problem arises when it comes to distinguishing between alrady updated and not yet updated neurons in neuron interactions. \end{DoxyCompactList}\item 
+std\-::array$<$ double, \\*
+S\-I\-G\-N\-A\-L\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-D+1 $>$ \hyperlink{classNeuron_a15160c28823ad0e63f171af31fd6b1ea}{incoming\-Spikes}
+\begin{DoxyCompactList}\small\item\em An array containing one more element than the uniform signal delay which allows to record all the incoming spike amplitudes and them being read at the right time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classNeuron_a1b5bf86e2ff7636a7e944909e19ec0f6}{static double \hyperlink{classNeuron_a1b5bf86e2ff7636a7e944909e19ec0f6}{ratio\-Vext\-Over\-Vthr}}\label{classNeuron_a1b5bf86e2ff7636a7e944909e19ec0f6}
+
+\begin{DoxyCompactList}\small\item\em A value determining the frequency of spikes from the rest of the brain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The unit cell of a network. 
+
+A neuron evolves over time, its membrane potential reacts to external stimuli and it can itself send electrical signals to connected neurons. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classNeuron_a9bf071c800e76fa7fbd611cee7cd76d6}{\index{Neuron@{Neuron}!add\-Target@{add\-Target}}
+\index{add\-Target@{add\-Target}!Neuron@{Neuron}}
+\subsubsection[{add\-Target}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::add\-Target (
+\begin{DoxyParamCaption}
+\item[{{\bf Neuron} $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_a9bf071c800e76fa7fbd611cee7cd76d6}
+
+
+Establishes a connection to a postsynaptic neuron, by adding it to its target. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNetwork_a0f7791473e2dab1ed23d0af25e3c866d}{Network\-::establish\-Connections()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em target} & a pointer to a neuron that shall receive signals \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNeuron_a5487631e8982ae2368da0917535a9001}{\index{Neuron@{Neuron}!get\-Background\-Noise@{get\-Background\-Noise}}
+\index{get\-Background\-Noise@{get\-Background\-Noise}!Neuron@{Neuron}}
+\subsubsection[{get\-Background\-Noise}]{\setlength{\rightskip}{0pt plus 5cm}double Neuron\-::get\-Background\-Noise (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNeuron_a5487631e8982ae2368da0917535a9001}
+
+
+Creates a value which accounts for the contribution of the rest of the brain. 
+
+This contribution is modeled by Cext excitatory neurons that fire randomly according to a poisson distribution at a frequency vext. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_a41a81d8527734e59bae39f73fece887f}{update\-Membrane\-Potential()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+a randomly generated value representing the background noise coming from the rest of the brain, a double 
+\end{DoxyReturn}
+\hypertarget{classNeuron_a86341dee7a81765fe4840777a008c688}{\index{Neuron@{Neuron}!get\-Membrane\-Potential@{get\-Membrane\-Potential}}
+\index{get\-Membrane\-Potential@{get\-Membrane\-Potential}!Neuron@{Neuron}}
+\subsubsection[{get\-Membrane\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}double Neuron\-::get\-Membrane\-Potential (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNeuron_a86341dee7a81765fe4840777a008c688}
+
+
+A getter for the neuron's membrane potential. 
+
+\begin{DoxyReturn}{Returns}
+the neuron's membrane potential, a double 
+\end{DoxyReturn}
+\hypertarget{classNeuron_a3c6a80c21ff5172e4de00c7dbf706303}{\index{Neuron@{Neuron}!get\-Number\-Of\-Excitatory\-Targets@{get\-Number\-Of\-Excitatory\-Targets}}
+\index{get\-Number\-Of\-Excitatory\-Targets@{get\-Number\-Of\-Excitatory\-Targets}!Neuron@{Neuron}}
+\subsubsection[{get\-Number\-Of\-Excitatory\-Targets}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Neuron\-::get\-Number\-Of\-Excitatory\-Targets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNeuron_a3c6a80c21ff5172e4de00c7dbf706303}
+
+
+A getter of the number of excitatory neurons among the targets the neuron has. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNetwork_a2f3ab248d3453b67f1545bf2e310538f}{Network\-::get\-Mean\-Number\-Of\-Excitatory\-Targets\-Per\-Neuron} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the number of excitatory neurons among the targets the neuron has, an unsigned int 
+\end{DoxyReturn}
+\hypertarget{classNeuron_a9497c01c1513b480cb96488e104c8b00}{\index{Neuron@{Neuron}!get\-Number\-Of\-Spikes@{get\-Number\-Of\-Spikes}}
+\index{get\-Number\-Of\-Spikes@{get\-Number\-Of\-Spikes}!Neuron@{Neuron}}
+\subsubsection[{get\-Number\-Of\-Spikes}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Neuron\-::get\-Number\-Of\-Spikes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNeuron_a9497c01c1513b480cb96488e104c8b00}
+
+
+A getter for the number of times the neuron spiked in the course of time. 
+
+Serves in testing. Uses the size of the vector storing the spike times. \begin{DoxyReturn}{Returns}
+the number of times the neuon spiked, a size\-\_\-t 
+\end{DoxyReturn}
+\hypertarget{classNeuron_a785f2fa8ab4f76dbc6a4b2a18c15da35}{\index{Neuron@{Neuron}!get\-Number\-Of\-Targets@{get\-Number\-Of\-Targets}}
+\index{get\-Number\-Of\-Targets@{get\-Number\-Of\-Targets}!Neuron@{Neuron}}
+\subsubsection[{get\-Number\-Of\-Targets}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Neuron\-::get\-Number\-Of\-Targets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNeuron_a785f2fa8ab4f76dbc6a4b2a18c15da35}
+
+
+A getter of the number of targets the neuron has. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNetwork_a2e2531cb63d1b17bd4ce29a675b12d74}{Network\-::get\-Mean\-Number\-Of\-Targets\-Per\-Neuron} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the number of targets the neuron has, an unsigned int 
+\end{DoxyReturn}
+\hypertarget{classNeuron_aec2283fbfaba764cd088e6d16b0a74bb}{\index{Neuron@{Neuron}!get\-Spike\-Amplitude@{get\-Spike\-Amplitude}}
+\index{get\-Spike\-Amplitude@{get\-Spike\-Amplitude}!Neuron@{Neuron}}
+\subsubsection[{get\-Spike\-Amplitude}]{\setlength{\rightskip}{0pt plus 5cm}double Neuron\-::get\-Spike\-Amplitude (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classNeuron_aec2283fbfaba764cd088e6d16b0a74bb}
+
+
+A virtual method which returns the constant spike amplitude, that differs between inhibitory and excitatory neurons. 
+
+(The method is defined for unspecified neurons as well so that the tests of previous versions of the program are still functional, otherwise it could be virtual pure.). \begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_a41a81d8527734e59bae39f73fece887f}{update\-Membrane\-Potential()} 
+
+\hyperlink{classNeuron_a2a3d0130b76a6e1daa0191b97718178b}{update\-Membrane\-Potential\-Without\-Background\-Noise()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the spike amplitudes of the presynaptic neuron, a double 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classInhibitoryNeuron_a762e2b7bcf64962f764031d991911b7a}{Inhibitory\-Neuron}, and \hyperlink{classExcitatoryNeuron_ab0ee5f76af48d48de6c42b1f5b27142a}{Excitatory\-Neuron}.
+
+\hypertarget{classNeuron_ae87bb09d99e4e9c2185be8b73fc242ba}{\index{Neuron@{Neuron}!get\-Spike\-Time@{get\-Spike\-Time}}
+\index{get\-Spike\-Time@{get\-Spike\-Time}!Neuron@{Neuron}}
+\subsubsection[{get\-Spike\-Time}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$ unsigned int $>$ \& Neuron\-::get\-Spike\-Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNeuron_ae87bb09d99e4e9c2185be8b73fc242ba}
+
+
+A getter for the neuron's spike times. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNetwork_ac82435bb56bf5eabfdd3e3f4afadea2b}{Network\-::get\-Mean\-Spike\-Rate\-In\-Interval} 
+
+\hyperlink{classNetwork_a704f86bb8fc175c204aa63575116b33a}{Network\-::get\-Iterator\-To\-Begin\-Interval} 
+
+\hyperlink{classNetwork_aa8c6b4953e1c5655d891859ffd936848}{Network\-::get\-Iterator\-To\-End\-Interval} 
+
+\hyperlink{classNetwork_a92fcc003c80ba7657389c500d7b9a0c1}{Network\-::get\-Iterator\-To\-Begin} 
+
+\hyperlink{classNetwork_a9d5998fdbac5347ebd70936dfaf7b47c}{Network\-::get\-Iterator\-To\-End} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the neuron's spiking times in simulation steps, a const reference to a vector of unsigned integers 
+\end{DoxyReturn}
+\hypertarget{classNeuron_aa40fbb2b025efb1db420da32e16741c1}{\index{Neuron@{Neuron}!is\-Refractory@{is\-Refractory}}
+\index{is\-Refractory@{is\-Refractory}!Neuron@{Neuron}}
+\subsubsection[{is\-Refractory}]{\setlength{\rightskip}{0pt plus 5cm}bool Neuron\-::is\-Refractory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_aa40fbb2b025efb1db420da32e16741c1}
+
+
+Compares the neuron's internal time to the time of the last spike and the refraction time in order to test if the neuron is in a refractory period. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_a782b3b728eee5097ab205a7a7990225b}{update}(void (\hyperlink{classNeuron}{Neuron}\-:\-:$\ast$membrane\-Potential\-Update)()) 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+if the neuron is in a refractory state, a bool 
+\end{DoxyReturn}
+\hypertarget{classNeuron_a763493ef8eff51a638cbb75f0983b828}{\index{Neuron@{Neuron}!read\-Ring\-Buffer@{read\-Ring\-Buffer}}
+\index{read\-Ring\-Buffer@{read\-Ring\-Buffer}!Neuron@{Neuron}}
+\subsubsection[{read\-Ring\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}double Neuron\-::read\-Ring\-Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a763493ef8eff51a638cbb75f0983b828}
+
+
+Reads the ring buffer's current entry to receive the spikes arriving with a delay that where emmited by presynaptic neurons. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_a41a81d8527734e59bae39f73fece887f}{update\-Membrane\-Potential()} 
+
+\hyperlink{classNeuron_a2a3d0130b76a6e1daa0191b97718178b}{update\-Membrane\-Potential\-Without\-Background\-Noise()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the sum of spike amplitudes of spikes from connected neurons that are currently arriving, a double 
+\end{DoxyReturn}
+\hypertarget{classNeuron_aa8111a347de6ddfb6c799bdcd3092cb7}{\index{Neuron@{Neuron}!receive\-Spike@{receive\-Spike}}
+\index{receive\-Spike@{receive\-Spike}!Neuron@{Neuron}}
+\subsubsection[{receive\-Spike}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::receive\-Spike (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{local\-Time\-Of\-Spiking\-Neuron, }
+\item[{double}]{spike\-Amplitude}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_aa8111a347de6ddfb6c799bdcd3092cb7}
+
+
+This method of a connected neuron is called when the neuron spikes. 
+
+The spike gets stored in its ring buffer in order to be read at the appropriate time. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_a955ecfd2984f75c18664bd370c34af1d}{spike()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em local\-Time\-Of\-Spiking\-Neuron} & an unsigned integer \\
+\hline
+{\em spike\-Amplitude} & defining the strength of the signal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the neuron is in a refractory state, a bool 
+\end{DoxyReturn}
+\hypertarget{classNeuron_a41dd9577d84a48bd427201b4b8234150}{\index{Neuron@{Neuron}!reinitialize\-Current\-Ring\-Buffer\-Element@{reinitialize\-Current\-Ring\-Buffer\-Element}}
+\index{reinitialize\-Current\-Ring\-Buffer\-Element@{reinitialize\-Current\-Ring\-Buffer\-Element}!Neuron@{Neuron}}
+\subsubsection[{reinitialize\-Current\-Ring\-Buffer\-Element}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::reinitialize\-Current\-Ring\-Buffer\-Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a41dd9577d84a48bd427201b4b8234150}
+
+
+Sets the current ring buffer element to zero and makes it thus ready to record new arriving spikes in another cycle to come. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_a782b3b728eee5097ab205a7a7990225b}{update}(void (\hyperlink{classNeuron}{Neuron}\-:\-:$\ast$membrane\-Potential\-Update)()) 
+\end{DoxySeeAlso}
+\hypertarget{classNeuron_ae77210c7b0bf3739b01ec2e3dba96827}{\index{Neuron@{Neuron}!set\-Input\-Current@{set\-Input\-Current}}
+\index{set\-Input\-Current@{set\-Input\-Current}!Neuron@{Neuron}}
+\subsubsection[{set\-Input\-Current}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::set\-Input\-Current (
+\begin{DoxyParamCaption}
+\item[{double}]{external\-Current}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_ae77210c7b0bf3739b01ec2e3dba96827}
+
+
+A setter for the external input current. 
+
+A method allowing to simulate the stimulation of the neuron by an external current. Is invoked in the main loop of the simulation in order to indicate the strength of the external stimulus. Not required any more in the final version of the program. 
+\begin{DoxyParams}{Parameters}
+{\em external\-Current} & the external input current a double. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNeuron_ac1a73d639befdae8610674bb66c15831}{\index{Neuron@{Neuron}!set\-Ratio\-Vext\-Over\-Vthr@{set\-Ratio\-Vext\-Over\-Vthr}}
+\index{set\-Ratio\-Vext\-Over\-Vthr@{set\-Ratio\-Vext\-Over\-Vthr}!Neuron@{Neuron}}
+\subsubsection[{set\-Ratio\-Vext\-Over\-Vthr}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::set\-Ratio\-Vext\-Over\-Vthr (
+\begin{DoxyParamCaption}
+\item[{double}]{ratio\-Vext\-Over\-Vthr\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classNeuron_ac1a73d639befdae8610674bb66c15831}
+
+
+Setter of the static attribute ratio\-Vext\-Over\-Vthr. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classSimulation_a9c9a1b5e52b447c84977990ebd545f38}{Simulation\-::run()} 
+\end{DoxySeeAlso}
+\hypertarget{classNeuron_a955ecfd2984f75c18664bd370c34af1d}{\index{Neuron@{Neuron}!spike@{spike}}
+\index{spike@{spike}!Neuron@{Neuron}}
+\subsubsection[{spike}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::spike (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a955ecfd2984f75c18664bd370c34af1d}
+
+
+Stores the spiking time and sets the membrane potential to zero and sends an electrical impulse to the connected neurons. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_a782b3b728eee5097ab205a7a7990225b}{update}(void (\hyperlink{classNeuron}{Neuron}\-:\-:$\ast$membrane\-Potential\-Update)()) 
+\end{DoxySeeAlso}
+\hypertarget{classNeuron_af1c7b80b5e70e906734ce710d37b1fd7}{\index{Neuron@{Neuron}!time\-To\-Ring\-Buffer\-Index@{time\-To\-Ring\-Buffer\-Index}}
+\index{time\-To\-Ring\-Buffer\-Index@{time\-To\-Ring\-Buffer\-Index}!Neuron@{Neuron}}
+\subsubsection[{time\-To\-Ring\-Buffer\-Index}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Neuron\-::time\-To\-Ring\-Buffer\-Index (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{time}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_af1c7b80b5e70e906734ce710d37b1fd7}
+
+
+Auxilliary method that yields the associated ring buffer index to a a given time by means of the modulo operator and checks if it is licit. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_aa8111a347de6ddfb6c799bdcd3092cb7}{receive\-Spike()} 
+
+\hyperlink{classNeuron_a763493ef8eff51a638cbb75f0983b828}{read\-Ring\-Buffer()} 
+
+\hyperlink{classNeuron_a41dd9577d84a48bd427201b4b8234150}{reinitialize\-Current\-Ring\-Buffer\-Element()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em time} & the time of which one wants to know the corresponding ring buffer index an unsigned integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ring buffer index corresponding to the given time a size\-\_\-t 
+\end{DoxyReturn}
+\hypertarget{classNeuron_a782b3b728eee5097ab205a7a7990225b}{\index{Neuron@{Neuron}!update@{update}}
+\index{update@{update}!Neuron@{Neuron}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_a782b3b728eee5097ab205a7a7990225b}
+
+
+Is invoked at each cycle of the simulation and makes the neutron evolve in the course of time. 
+
+Advances the neuron one step as a function of its current state by eventual spiking if the membrane potential has reached a threshold, resting inactive during the refractory period after a spike or updating the membrane potential and finally handling the ring buffer and the random contribution from the rest of the brain as well as incrementing the neuron's internal clock. Makes use of the function void update(void (\hyperlink{classNeuron}{Neuron}\-:\-:$\ast$membrane\-Potential\-Update)()) in order to avoid duplication of code. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classNetwork_ab07bb6f6d9020b9eb230551083ea929f}{Network\-::update()} 
+\end{DoxySeeAlso}
+\hypertarget{classNeuron_a521a967d65a078140cc9c6b8d30240ce}{\index{Neuron@{Neuron}!update@{update}}
+\index{update@{update}!Neuron@{Neuron}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::update (
+\begin{DoxyParamCaption}
+\item[{void(Neuron\-::$\ast$)()}]{membrane\-Potential\-Update}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a521a967d65a078140cc9c6b8d30240ce}
+
+
+An auxiliary function that allows to avoid duplication of code in \hyperlink{classNeuron_a782b3b728eee5097ab205a7a7990225b}{update()} and \hyperlink{classNeuron_ababbaa5bc5f7b2e00e0ae5ffcc8fbfdb}{update\-Without\-Background\-Noise()}. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_a782b3b728eee5097ab205a7a7990225b}{update()} 
+
+\hyperlink{classNeuron_ababbaa5bc5f7b2e00e0ae5ffcc8fbfdb}{update\-Without\-Background\-Noise()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em membrane\-Potential\-Update} & a member function without return value \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNeuron_a41a81d8527734e59bae39f73fece887f}{\index{Neuron@{Neuron}!update\-Membrane\-Potential@{update\-Membrane\-Potential}}
+\index{update\-Membrane\-Potential@{update\-Membrane\-Potential}!Neuron@{Neuron}}
+\subsubsection[{update\-Membrane\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::update\-Membrane\-Potential (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a41a81d8527734e59bae39f73fece887f}
+
+
+Calculates and sets the new membrane potential as a function of the current membrane potential, the spikes that arrived with a signal delay and the random background noise arriving from the rest of the brain. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_a782b3b728eee5097ab205a7a7990225b}{update()} 
+\end{DoxySeeAlso}
+\hypertarget{classNeuron_a2a3d0130b76a6e1daa0191b97718178b}{\index{Neuron@{Neuron}!update\-Membrane\-Potential\-Without\-Background\-Noise@{update\-Membrane\-Potential\-Without\-Background\-Noise}}
+\index{update\-Membrane\-Potential\-Without\-Background\-Noise@{update\-Membrane\-Potential\-Without\-Background\-Noise}!Neuron@{Neuron}}
+\subsubsection[{update\-Membrane\-Potential\-Without\-Background\-Noise}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::update\-Membrane\-Potential\-Without\-Background\-Noise (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a2a3d0130b76a6e1daa0191b97718178b}
+
+
+Calculates and sets the new membrane potential as a function of the current membrane potential, the external input current and the spikes that arrived with a signal delay. 
+
+Similar to \hyperlink{classNeuron_a41a81d8527734e59bae39f73fece887f}{update\-Membrane\-Potential()} but not considering the random background noise arriving from the rest of the brain, but an external current instead. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_ababbaa5bc5f7b2e00e0ae5ffcc8fbfdb}{update\-Without\-Background\-Noise()} 
+\end{DoxySeeAlso}
+\hypertarget{classNeuron_ababbaa5bc5f7b2e00e0ae5ffcc8fbfdb}{\index{Neuron@{Neuron}!update\-Without\-Background\-Noise@{update\-Without\-Background\-Noise}}
+\index{update\-Without\-Background\-Noise@{update\-Without\-Background\-Noise}!Neuron@{Neuron}}
+\subsubsection[{update\-Without\-Background\-Noise}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron\-::update\-Without\-Background\-Noise (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNeuron_ababbaa5bc5f7b2e00e0ae5ffcc8fbfdb}
+
+
+The method is similar to void \hyperlink{classNeuron_a782b3b728eee5097ab205a7a7990225b}{update()} but it doesn't account for the random contribution from the rest of the brain. Is invoked at each cycle of the simulation and makes the neutron evolve in the course of time. 
+
+Advances the neuron one step as a function of its current state by eventual spiking if the membrane potential has reached a threshold, resting inactive during the refractory period after a spike or updating the membrane potential and finally handling the ring buffer as well as incrementing the neuron's internal clock. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classNeuron_a15160c28823ad0e63f171af31fd6b1ea}{\index{Neuron@{Neuron}!incoming\-Spikes@{incoming\-Spikes}}
+\index{incoming\-Spikes@{incoming\-Spikes}!Neuron@{Neuron}}
+\subsubsection[{incoming\-Spikes}]{\setlength{\rightskip}{0pt plus 5cm}std\-::array$<$double, S\-I\-G\-N\-A\-L\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-D + 1$>$ Neuron\-::incoming\-Spikes\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_a15160c28823ad0e63f171af31fd6b1ea}
+
+
+An array containing one more element than the uniform signal delay which allows to record all the incoming spike amplitudes and them being read at the right time. 
+
+A ring buffer ensuring spikes arrive with the right signal delay, an array of doubles. \hypertarget{classNeuron_adb1a016b5d339ba3ba95367bb66f391a}{\index{Neuron@{Neuron}!internal\-Time@{internal\-Time}}
+\index{internal\-Time@{internal\-Time}!Neuron@{Neuron}}
+\subsubsection[{internal\-Time}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Neuron\-::internal\-Time\hspace{0.3cm}{\ttfamily [private]}}}\label{classNeuron_adb1a016b5d339ba3ba95367bb66f391a}
+
+
+Another clock which allows to synchronize the times between the neurons, otherwise a problem arises when it comes to distinguishing between alrady updated and not yet updated neurons in neuron interactions. 
+
+A clock keeping track of the neuron's local time, an unsigned integer. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+neuron.\-hpp\item 
+neuron.\-cpp\end{DoxyCompactItemize}

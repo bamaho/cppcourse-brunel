@@ -1,0 +1,67 @@
+\hypertarget{classExcitatoryNeuron}{\section{Excitatory\-Neuron Class Reference}
+\label{classExcitatoryNeuron}\index{Excitatory\-Neuron@{Excitatory\-Neuron}}
+}
+
+
+A subclass of \hyperlink{classNeuron}{Neuron}.  
+
+
+
+
+{\ttfamily \#include $<$excitatory\-Neuron.\-hpp$>$}
+
+Inheritance diagram for Excitatory\-Neuron\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classExcitatoryNeuron}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classExcitatoryNeuron_a6671b58ccab729f837478530e3cdf922}{\hyperlink{classExcitatoryNeuron_a6671b58ccab729f837478530e3cdf922}{Excitatory\-Neuron} ()}\label{classExcitatoryNeuron_a6671b58ccab729f837478530e3cdf922}
+
+\begin{DoxyCompactList}\small\item\em A constructor, calling the constructor of the superclass \hyperlink{classNeuron}{Neuron}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classExcitatoryNeuron_ab0ee5f76af48d48de6c42b1f5b27142a}{get\-Spike\-Amplitude} () const override
+\begin{DoxyCompactList}\small\item\em A getter of the excitatory neuron's spike amplitude. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A subclass of \hyperlink{classNeuron}{Neuron}. 
+
+A class that allows excitatory neurons to adopt specific behaviour, namely having a distinct spike amplitude. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classExcitatoryNeuron_ab0ee5f76af48d48de6c42b1f5b27142a}{\index{Excitatory\-Neuron@{Excitatory\-Neuron}!get\-Spike\-Amplitude@{get\-Spike\-Amplitude}}
+\index{get\-Spike\-Amplitude@{get\-Spike\-Amplitude}!ExcitatoryNeuron@{Excitatory\-Neuron}}
+\subsubsection[{get\-Spike\-Amplitude}]{\setlength{\rightskip}{0pt plus 5cm}double Excitatory\-Neuron\-::get\-Spike\-Amplitude (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classExcitatoryNeuron_ab0ee5f76af48d48de6c42b1f5b27142a}
+
+
+A getter of the excitatory neuron's spike amplitude. 
+
+Reads the excitatory neuron's spike amplitude from the parameter file. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_a955ecfd2984f75c18664bd370c34af1d}{Neuron\-::spike()} 
+
+\hyperlink{classNeuron_a3c6a80c21ff5172e4de00c7dbf706303}{Neuron\-::get\-Number\-Of\-Excitatory\-Targets()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the excitatory neuron's spike amplitude, a double 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNeuron_aec2283fbfaba764cd088e6d16b0a74bb}{Neuron}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+excitatory\-Neuron.\-hpp\item 
+excitatory\-Neuron.\-cpp\end{DoxyCompactItemize}

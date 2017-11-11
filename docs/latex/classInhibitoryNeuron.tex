@@ -1,0 +1,100 @@
+\hypertarget{classInhibitoryNeuron}{\section{Inhibitory\-Neuron Class Reference}
+\label{classInhibitoryNeuron}\index{Inhibitory\-Neuron@{Inhibitory\-Neuron}}
+}
+
+
+A subclass of \hyperlink{classNeuron}{Neuron}.  
+
+
+
+
+{\ttfamily \#include $<$inhibitory\-Neuron.\-hpp$>$}
+
+Inheritance diagram for Inhibitory\-Neuron\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classInhibitoryNeuron}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classInhibitoryNeuron_a05c384032408c8c30c0801f96aecc5f8}{\hyperlink{classInhibitoryNeuron_a05c384032408c8c30c0801f96aecc5f8}{Inhibitory\-Neuron} ()}\label{classInhibitoryNeuron_a05c384032408c8c30c0801f96aecc5f8}
+
+\begin{DoxyCompactList}\small\item\em A constructor, calling the constructor of the superclass \hyperlink{classNeuron}{Neuron}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classInhibitoryNeuron_a68a66521c5f33a5a01482e752fb1a72c}{set\-Ratio\-Jinover\-Jex\-G} (double ratio\-Jinover\-Jex\-G\-\_\-)
+\begin{DoxyCompactList}\small\item\em A setter of the static attribute ratio\-Jinover\-Jex\-G. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classInhibitoryNeuron_a762e2b7bcf64962f764031d991911b7a}{get\-Spike\-Amplitude} () const override
+\begin{DoxyCompactList}\small\item\em A getter of the inhibitory neuron's spike amplitude. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classInhibitoryNeuron_ac30b4a5c967499f95bcf5c572107c263}{static double \hyperlink{classInhibitoryNeuron_ac30b4a5c967499f95bcf5c572107c263}{ratio\-Jinover\-Jex\-G}}\label{classInhibitoryNeuron_ac30b4a5c967499f95bcf5c572107c263}
+
+\begin{DoxyCompactList}\small\item\em a simulation parameter, the ratio of the spike amplitudes of inhibitory and excitatory neurons. Defines the inhibitory neuron's spike amplitude, a double. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A subclass of \hyperlink{classNeuron}{Neuron}. 
+
+A class that allows inhibitory neurons to adopt specific behaviour, namely having a distinct spike amplitude. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classInhibitoryNeuron_a762e2b7bcf64962f764031d991911b7a}{\index{Inhibitory\-Neuron@{Inhibitory\-Neuron}!get\-Spike\-Amplitude@{get\-Spike\-Amplitude}}
+\index{get\-Spike\-Amplitude@{get\-Spike\-Amplitude}!InhibitoryNeuron@{Inhibitory\-Neuron}}
+\subsubsection[{get\-Spike\-Amplitude}]{\setlength{\rightskip}{0pt plus 5cm}double Inhibitory\-Neuron\-::get\-Spike\-Amplitude (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classInhibitoryNeuron_a762e2b7bcf64962f764031d991911b7a}
+
+
+A getter of the inhibitory neuron's spike amplitude. 
+
+Calculates the inhibitory neuron's spike amplitude from ratio\-Jinover\-Jex\-G and the excitatory neuron's spike amplitude specified in the parameter file. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classNeuron_a955ecfd2984f75c18664bd370c34af1d}{Neuron\-::spike()} 
+
+\hyperlink{classNeuron_a3c6a80c21ff5172e4de00c7dbf706303}{Neuron\-::get\-Number\-Of\-Excitatory\-Targets()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the excitatory neuron's spike amplitude, a double 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNeuron_aec2283fbfaba764cd088e6d16b0a74bb}{Neuron}.
+
+\hypertarget{classInhibitoryNeuron_a68a66521c5f33a5a01482e752fb1a72c}{\index{Inhibitory\-Neuron@{Inhibitory\-Neuron}!set\-Ratio\-Jinover\-Jex\-G@{set\-Ratio\-Jinover\-Jex\-G}}
+\index{set\-Ratio\-Jinover\-Jex\-G@{set\-Ratio\-Jinover\-Jex\-G}!InhibitoryNeuron@{Inhibitory\-Neuron}}
+\subsubsection[{set\-Ratio\-Jinover\-Jex\-G}]{\setlength{\rightskip}{0pt plus 5cm}void Inhibitory\-Neuron\-::set\-Ratio\-Jinover\-Jex\-G (
+\begin{DoxyParamCaption}
+\item[{double}]{ratio\-Jinover\-Jex\-G\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classInhibitoryNeuron_a68a66521c5f33a5a01482e752fb1a72c}
+
+
+A setter of the static attribute ratio\-Jinover\-Jex\-G. 
+
+Sets the static attribute and simulation parameter ratio\-Jinover\-Jex\-G which, specified by methods of the class \hyperlink{classSimulation}{Simulation}, defines the inhibitory's spike amplitude. \begin{DoxySeeAlso}{See Also}
+Simulation\-::set\-Ratio\-Jinover\-Jex\-G 
+
+\hyperlink{classSimulation_ace8912fc809b3503c9a7e769d97cd7cb}{Simulation\-::print\-Data\-For\-Brunel\-Figure\-To\-File} 
+
+\hyperlink{classSimulation_acf963fa9fa6621ec7f98f743ffbd96f5}{Simulation\-::get\-Mean\-Spike\-Rate\-In\-Interval} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em ratio\-Jinover\-Jex\-G\-\_\-} & a double \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+inhibitory\-Neuron.\-hpp\item 
+inhibitory\-Neuron.\-cpp\end{DoxyCompactItemize}
